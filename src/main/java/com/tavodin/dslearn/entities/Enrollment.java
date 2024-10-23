@@ -25,6 +25,9 @@ public class Enrollment {
     @ManyToMany(mappedBy = "enrollmentsDone")
     private Set<Lesson> lessonsDone = new HashSet<>();
 
+    @OneToMany(mappedBy = "enrollment")
+    private Set<Deliver> delivers = new HashSet<>();
+
     public Enrollment() {
     }
 

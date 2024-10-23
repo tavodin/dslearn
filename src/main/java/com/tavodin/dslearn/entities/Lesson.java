@@ -29,6 +29,9 @@ public abstract class Lesson {
                     @JoinColumn(name = "offer_id")})
     private Set<Enrollment> enrollmentsDone = new HashSet<>();
 
+    @OneToMany(mappedBy = "lesson")
+    private Set<Deliver> delivers = new HashSet<>();
+
     public Lesson() {
     }
 
