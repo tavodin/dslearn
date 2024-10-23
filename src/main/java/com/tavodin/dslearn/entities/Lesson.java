@@ -2,9 +2,7 @@ package com.tavodin.dslearn.entities;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_lesson")
@@ -31,6 +29,9 @@ public abstract class Lesson {
 
     @OneToMany(mappedBy = "lesson")
     private Set<Deliver> delivers = new HashSet<>();
+
+    @OneToMany(mappedBy = "lesson")
+    private List<Topic> topics = new ArrayList<>();
 
     public Lesson() {
     }
@@ -76,6 +77,14 @@ public abstract class Lesson {
 
     public Set<Enrollment> getEnrollmentsDone() {
         return enrollmentsDone;
+    }
+
+    public Set<Deliver> getDelivers() {
+        return delivers;
+    }
+
+    public List<Topic> getTopics() {
+        return topics;
     }
 
     @Override

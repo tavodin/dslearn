@@ -88,5 +88,15 @@ public class Enrollment {
         this.onlyUpdate = onlyUpdate;
     }
 
+    public EnrollmentPK getId() {
+        return id;
+    }
 
+    public Set<Lesson> getLessonsDone() {
+        return lessonsDone;
+    }
+
+    public Set<Deliver> getDelivers() {
+        return delivers;
+    }
 }
